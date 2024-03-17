@@ -1,0 +1,25 @@
+<header id="store">
+  <h1>Store</h1>
+  <div class="store-container">
+    <button (click)="filter('vegetable')">show vegetables</button>
+    <button (click)="filter('fruit')">show fruits</button>
+    <button (click)="filter('')">show all</button>
+    <button (click)="filterByPrice()">sort by price</button>
+    <button (click)="filterByName()">sort by name</button>
+    <div class="store-grid">
+      <div class="product-container" *ngFor="let product of filteredItems">
+        <img
+          [class.item-image]="true"
+          [src]="'/assets/icons/' + product.id + '.svg'"
+          [alt]="product.name"
+        />
+        <button (click)="addItem(product)">Add</button>
+      </div>
+    </div>
+  </div>
+</header>
+<main id="cart">
+  <h2>Your Cart</h2>
+  <app-cart></app-cart>
+  <app-total></app-total>
+</main>

@@ -1,0 +1,16 @@
+<main id="cart">
+  <h2>Your Cart</h2>
+  <div class="cart--item-list-container">
+    <ul class="item-list cart--item-list">
+      <li *ngFor="let product of cart">
+        <img
+          class="cart--item-icon"
+          src="{{ 'assets/icons/' + product.id + '.svg' }}"
+          alt="product.name"
+        />
+        <p>{{ product.name }}</p>
+        <span class="quantity-text center">{{ product.quantity }}</span>
+      </li>
+    </ul>
+  </div>
+</main>
